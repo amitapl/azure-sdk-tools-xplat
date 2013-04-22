@@ -32,6 +32,9 @@ if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
   DEPLOYMENT_SOURCE=$SCRIPT_DIR
 fi
 
+# make sure we are on the repository directory before starting to run the deployment logic
+pushd "$DEPLOYMENT_SOURCE"
+
 if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
   NEXT_MANIFEST_PATH=$ARTIFACTS/manifest
 
